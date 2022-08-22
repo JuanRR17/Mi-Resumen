@@ -1,0 +1,274 @@
+:root{
+  --bs:30px 10px 20px #777;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior:smooth; 
+}
+body {
+  background-color: hsl(180, 0%, 80%);
+  margin:0;
+  padding:0;
+}
+
+p{
+  font-size:1rem;
+}
+h1{
+  font-size:1.5rem;
+  margin:0;
+}
+img{
+  width:calc(70%);
+  object-fit: cover;
+  margin:0.5rem 0;
+}
+
+.cabecera{
+  background-color:#444;
+  position:fixed;
+  top:0;
+  right:0;
+  z-index:1;
+  margin:0;
+  border: 5px solid orange;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  display: flex;
+  justify-content: center;
+}
+.cabecera_fondo{
+  background-color: white;
+  width:100%;
+}
+.titulo{
+  width:100px;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  padding:0.5rem;
+  margin:0.5rem;
+  color:orange;
+  display: inline-block;
+}
+.subir{
+  position:fixed;
+  display:block;
+  margin:0.5rem;
+  background-color: white;
+  border-radius: 1rem;
+  padding-left:0.5rem;
+  bottom:25px;
+  right:0;
+  text-decoration: none;
+  border:4px outset orange;
+  width:2rem;
+}
+.subir:hover{
+  background-color: orange;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.menu{
+  background-color: rgba(236, 199, 129, 0.959);
+  margin:0.5rem;
+  padding:0.5rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  border: 5px outset orange; 
+  cursor:pointer;
+  color:black;
+}
+.barra{
+  display:none;
+  position:absolute;
+  background-color: white;
+  margin:0 0.5rem;
+  padding:0;
+  font-size: 1rem;
+  width: auto;
+  border-radius: 1rem;
+  z-index:1;
+  border: 2px solid orange;
+    }
+.dropdown:hover .barra{
+      display:block;
+      
+      }
+.dropdown:hover .menu{
+  background-color:orange;
+  color:white;
+}
+.barra a{
+  width:150px;
+  text-decoration: none;
+  /*background-color:red;*/
+  padding:0.5rem;
+  margin:0;
+  display:block;
+  color:black;
+   }
+
+.barra a:hover {
+  background-color:orange;
+  color:white;
+  border-radius:0.5rem;
+  border:3px outset orange;
+}
+/* CONTENIDO EN FLEX */
+.contenido{
+  clear:left;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  font:1rem 'Roboto', sans-serif;
+  padding: 5rem 0.5rem 0.5rem 0.5rem;
+  /*padding-top: 90px;*/
+  
+}
+.contenido>div{
+  /*border-radius: 20px;*/
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color:#ddd;
+  margin:1.5rem;
+  padding:1.5rem;
+  width:auto;
+  height:300px;
+  border:4px solid orange;
+  /*resize: both;*/
+  overflow: auto;
+}
+
+.par{
+  color:grey;
+}
+
+div h1{
+  text-decoration: underline;
+  width:350px;
+  position:absolute;
+  background-color:inherit;
+  padding:3px;
+}
+
+h1+p{
+  padding-top: 2.8rem;
+}
+.contenido .fbox{
+  width:80%;
+}
+.flexbox{
+  height:500px;
+  width:100%;
+}
+div a{
+  color:black;
+}
+ 
+ @media (min-width:1000px){
+   .contenido div{
+     width:25%;
+      }
+    .contenido .fbox{
+    width:35%;
+      }
+    .contenido .ftp{
+      width:55%;
+      }
+    
+    }
+    
+
+  .list{
+    list-style-type:none;
+    column-count: 3;
+    padding:0;
+  }
+  #crosshair{
+    cursor:crosshair;
+   }
+   #default{
+    cursor:default;
+   }
+   #pointer{
+    cursor:pointer;
+   }
+   #move{
+    cursor:move;
+   }
+   #e-resize{
+    cursor:e-resize;
+   }
+   #ne-resize{
+    cursor:ne-resize;
+   }
+   #n-resize{
+    cursor:n-resize;
+   }
+   #nw-resize{
+    cursor:nw-resize;
+   }
+   #se-resize{
+    cursor:se-resize;
+   }
+   #sw-resize{
+    cursor:sw-resize;
+   }
+   #s-resize{
+    cursor:s-resize;
+   }
+   #w-resize{
+    cursor:w-resize;
+   }
+   #text{
+    cursor:text;
+   }
+   #wait{
+    cursor:wait;
+   }
+   #help{
+    cursor:help;
+   }
+   #auto{
+    cursor:auto;
+   }
+.cursor{
+  list-style-type: none;
+  list-style-position:initial;
+  column-count:3;
+  padding:0;
+}
+
+#recuadro1{
+  box-shadow: var(--bs); 
+  border-radius: 20px;  
+  background-color:rgb(248, 202, 116);
+  width:170px;
+  height: auto;
+  padding:15px;
+  margin:10px;
+  }
+td a{
+  color:blue;
+  text-decoration: none;
+}
+.ejerciciosjs{
+  text-align: center;
+  
+}
+.ejerciciosjs td{
+  padding:3px;
+}
+.destructuring a{
+  display: inline-block;
+  width:100%;
+}

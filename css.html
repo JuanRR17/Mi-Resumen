@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+ <title>CSS</title>
+ <meta charset="UTF-8">
+ <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+ <link rel="stylesheet" href="estilos.css" type="text/css">
+ <meta name="viewport" content="width=device-width , initial-scale=1.0" >
+ <!--- Roboto Font -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div  class="cabecera">
+    <!---<div class="titulo"id="titulo">CSS</div>-->
+    <div class="dropdown">
+    <button class="menu">CSS</button>
+    <nav class="barra" style="left: 0;">
+      <a href="index.html">General</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="javascript.html">Javascript</a>
+      <a href="react.html">React</a>
+      <a href="manjaro.html">Manjaro</a>
+    </nav>
+  </div>
+  <div class="dropdown">
+    <button class="menu">Comandos</button>
+    <nav class="barra" style="right: 0;">
+        <a href="#background">Background</a>
+        <a href="#border">Border</a>
+        <a href="#lists">Lists</a>
+        <a href="#boxmodel">Box Model</a>
+        <a href="#outline">Outline</a>
+        <a href="#@media">@media</a>
+        <a href="#cursor">Cursor</a>
+        <a href="#color">Color</a>
+        <a href="#hijos">Select. hijos</a>
+        <a href="#hermanos">Select. hermanos</a>
+        <a href="#atributos">Select. atributos</a>
+        <a href="#child">Select. child</a>
+        <a href="#only_">Only-(child/of-type)</a>
+        <a href="#flexbox">Flexbox</a>
+        <a href="#boxshadow">Box-shadow</a>
+    </nav>
+    </div>
+    <a href="#titulo" class="subir"><img src="Images/up-arrow.png"></a>
+  </div>
+  
+    <div id="titulo" class="contenido">
+        <div id="background">
+        <h1>Background</h1>
+        <p>
+        <strong>background:</strong> color, image, repeat, attachment, position;<br><br>
+        <strong>background-color:</strong> #09af0f, hsl(0-360,0-100%,0-100%), rgb(0,255,0)<br>
+        <strong>background-image:</strong> url(fondo.jpg)<br>
+        <strong>background-repeat:</strong> no-repeat, repeat-x, repeat-y <br>
+        <strong>background-position:</strong> (top-center-bottom), (left-center-top), x-% y-%, x-pos y-pos <br>
+        <strong>background-attachment:</strong> fixed, scroll<br>
+        <strong>background-size:</strong> auto, (<strong>n</strong>px, <strong>n</strong>px);<br>
+        <strong>background-clip:</strong> border-box, padding-box, content-box;<br>
+        </p>
+        </div>
+        <div id="border">
+        <h1>Border</h1>
+        <p>
+        <strong>border:</strong> width <span style="text-decoration:underline">style</span> color;<br><br>
+        <strong>border-(top-right-left-bottom)-(width-color-style):</strong><br>
+        style --> (dashed, dotted, double, groove, hidden, inset, outset, ridge, solid)<br>
+        </p>
+        </div>
+        <div id="lists">
+        <h1>Lists</h1>
+        <p>
+        &lt;ul list-style-<strong>type:</strong> <em>type</em>&lt;/ul&gt;<br>
+        </p>
+        <ul class="list">
+          <li><ul style="list-style-type:none"><li>none</li></ul></li>
+        <li><ul style="list-style-type:disc"><li>disc</li></ul></li>
+        <li><ul style="list-style-type:circle"><li>circle</li></ul></li>
+        <li><ul style="list-style-type:square"><li>square</li></ul></li>
+        <li><ul style="list-style-type:decimal"><li>decimal</li></ul></li>
+        <li><ul style="list-style-type:decimal-leading-zero"><li>decimal-leading-zero</li></ul></li>
+        <li><ul style="list-style-type:lower-roman"><li>lower-roman</li></ul></li>
+        <li><ul style="list-style-type: upper-roman;"><li>upper-roman</li></ul></li>
+        <li><ul style="list-style-type: lower-alpha;"><li>lower-alpha</li></ul></li>
+        <li><ul style="list-style-type: upper-alpha;"><li>upper-alpha</li></ul></li>
+        </ul>
+        <p>
+        &lt;ul list-style-<strong>position:</strong> inside | outside | initial | inherit&gt; &lt;/ul&gt;<br><br>
+        &lt;ul list-style-<strong>image:</strong>url('image.gif')&gt;&lt;/ul&gt;<br> replaces the list-item marker with an image<br>
+        </p>
+        
+        </div>
+        <div id="boxmodel">
+        <h1>Box Model</h1>
+        <a href="/Images/Box_Model.JPG" target="_blank"><img src="/Images/Box_Model.JPG" alt="Box Model" style="width:100%;height:auto"></a>
+        </div>
+        <div id="outline">
+        <h1>Outline</h1>
+        <a href="/Images/Outline.JPG" target="_blank"><img src="/Images/Outline.JPG" alt="Outline" style="width:100%;height:auto"></a>
+        <p>
+        <strong>outline:</strong> width <span style="text-decoration: underline;">style</span> color;<br><br>
+        outline-style<br>
+        outline-color<br>
+        outline-width<br>
+        outline-offset<br>
+        </p>
+        </div>
+        <div id="@media">
+        <h1>@media</h1>
+        <p>
+        @media <em>medio(all por defecto) </em>(<em>condición</em>) {<br>
+            &nbsp;&nbsp; &nbsp;<em>.elemento</em> {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<em>instrucciones</em><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;...<br>
+                &nbsp;&nbsp;&nbsp;}<br>
+          }<br>
+          Es importante el orden en que definimos las media queries ya que las propiedades quedan definidas por la última asignación.<br>
+        </p>
+        </div>
+        <div id="cursor">
+          <h1>Cursor</h1>
+          <p></p>
+          Valores que puede adoptar la propiedad cursor:<br>
+          <em>(Pasar el cursor por encima de cada valor)</em>
+          </p>
+          <p>
+          <strong>cursor:</strong><em>valor</em>&nbsp;;
+        </p>
+          <ul class="cursor">
+            <li><div id="crosshair">crosshair</div></li>
+          <li><div id="default">default</div></li>
+          <li><div id="pointer">pointer</div></li>
+          <li><div id="move">move</div></li>
+          <li><div id="e-resize">e-resize</div></li>
+          <li><div id="ne-resize">ne-resize</div></li>
+          <li><div id="nw-resize">nw-resize</div></li>
+          <li><div id="n-resize">n-resize</div></li>
+          <li><div id="se-resize">se-resize</div></li>
+          <li><div id="sw-resize">sw-resize</div></li>
+          <li><div id="s-resize">s-resize</div></li>
+          <li><div id="w-resize">w-resize</div></li>
+          <li><div id="text">text</div></li>
+          <li><div id="wait">wait</div></li>
+          <li><div id="help">help</div></li>
+          <li><div id="auto">auto</div></li>
+          </ul>
+        </div>
+        <div id="color">
+          <h1>Color</h1>
+          <p>
+          HEX: #0099ff<br>
+          RGB: rgb(0-255,0-255,0-255)<br>
+          HSL: hsl(0-360<em>(hue)</em>, 0-100%<em>(saturation)</em>, 0-100%<em>(lightness)</em>)<br>
+          </p>
+         </div>
+        <div id="hijos">
+          <h1>Selector de hijos</h1>
+          <p>
+            h1.principal {font-family:Arial;}<br><br>
+            Se aplica el tipo de fuente Arial a todos los elementos h1 que tienen definida la clase &quot;principal&quot;
+          </p>
+          <p>
+            h1#titulo1 {font-family:Arial;}<br><br>
+            Se aplica el tipo de fuente Arial al elementos h1 que tiene definidida la propiedad id con el valor &quot;titulo1&quot;.
+          </p>
+          <p>
+            ul em{color:#f00;}<br><br>
+            Todos los elementos &quot;em&quot; se mostraran de color rojo siempre y cuando estén contenidos por un elemento &quot;ul&quot;.
+          </p>
+          <p>
+            h1>em {color:#0f0;}<br><br>
+            Aquí solo se aplica el color #0f0 si em es un elemento hijo directo de h1.
+          </p>
+        </div>
+        <div id="hermanos">
+          <h1>Select. hermanos</h1>
+          <p>
+          &lt;body&gt;<br>
+&lt;h1&gt;Titulo 1&lt;/h1&gt;<br>
+&lt;p&gt;Esto es el primer párrafo.&lt;/p&gt;<br>
+&lt;p&gt;Esto es el segundo párrafo.&lt;/p&gt;<br>
+&lt;p&gt;Esto es el tercer párrafo.&lt;/p&gt;<br>
+&lt;/body&gt;<br>
+          </p>
+          <p>
+            h1+p{color:#f00;}<br><br>
+            Seleccionamos el primer párrafo que le sigue al elemento h1. Luego el primer párrafo se pinta de rojo.
+          </p>
+          <p>
+            p+p{color:#f00;}<br><br>
+            Se pintan de rojo el segundo y tercer párrafo ya que a cada uno de estos párrafos le antecede otro párrafo (no se pinta el primer párrafo porque no le antecede un párrafo sino un &quot;h1&quot;)
+          </p>
+          <p>
+            h1~p{color:#f00;}<br><br>
+            Como resultado se aplica el color rojo a todos los párrafos adyacentes que tienen como hermano el elemento &quot;h1&quot;.
+          </p>
+        </div>
+        <div id="atributos">
+          <h1>Select. atributos</h1>
+          <p>
+            a[target]{color:#f00;}<br><br>
+            Esta regla se aplica a todos los elementos de tipo "a" que tienen definida la propiedad llamada "target".
+          </p>
+          <p>
+            a[href="#"]{text-decoration:line-through;}<br><br>
+            Esta regla se aplica a todos los elementos de tipo "a" que tienen almacenados en la propiedad href la cadena "#".
+          </p>
+          <p>
+            a[href<em>^|$|*</em>="http"] {color:#f00;}<br><br>
+            Podemos también controlar si el valor de la propiedad comienza (^), finaliza ($) o tiene en su interior una determinada cadena de caracteres (*).
+          </p>
+        </div>
+        <div id="child">
+          <h1>Select. child</h1>
+          <p>
+            ol li:<em>(first/last)</em>-child {color:green;}<br>
+            <span class="par">(también se puede escribir como)</span><br>
+            li:<em>(first/last)</em>-child {color:green;}<br><br>
+            Selecciona el primer/último item de la lista.
+          </p>
+          <p>
+            tr:nth-child(<em>odd/even</em>) {background-color:red;}<br><br>
+            Si a la pseudoclase nth-child le pasamos el valor odd/even nos seleccionará todos los elementos de las posiciones impares/pares.
+          </p>
+          <p>
+            tr:nth-child(<strong>a</strong>n+<strong>b</strong>) {background-color:red;}<br><br>
+            Selecciona la fila <strong>an+b</strong> de la tabla.<br>
+            a deber ser al menos 1(no se escribiría). b es opcional. 
+          </p>
+          <p>
+            tr:nth-<strong>last</strong>-child(<strong>a</strong>n+<strong>b</strong>) {background-color:red;}<br><br>
+            Empieza a contar desde la última fila.
+            </p>
+        </div>
+        <div id="only_">
+          <h1>Only-(child/of-type)</h1>
+          <p>
+            La pseudo-clase <strong>only-child</strong> se aplica cuando en dicho nivel hay un solo elemento.<br><br>
+            #fechainicio li:<strong>only-child</strong> {color:blue;}<br><br>
+            El li se pinta de rojo sólo si hay un solo elemento en ese nivel.
+          </p>
+        <p>
+          La pseudo-clase <strong>only-of-type</strong> se aplica cuando en dicho nivel hay un solo elemento de ese tipo (no importa cuantos otros elementos hay de otro tipo en el mismo nivel)<br><br>
+          &lt;div id=&quot;equipo1&quot;&gt;<br>
+            &nbsp;&nbsp;&lt;h1&gt;Participantes&lt;/h1&gt;<br>
+            &nbsp;&nbsp;&lt;p&gt;Pablo Martinez.&lt;/p&gt; <br> 
+            &lt;/div&gt;<br><br>
+           #equipo1 p:<strong>only-of-type</strong>{color:red;}<br><br>
+          Sí se pinta de rojo el párrafo ya que en ese nivel hay solo un elemento de tipo párrafo.
+          </p>
+        </div>
+        <div id="flexbox" class="fbox">
+          <h1><a href="flexbox.html" target="_blank">Flexbox (abrir en otra ventana)</a></h1>
+          <p>
+            <iframe class="flexbox" src="flexbox.html">
+
+            </iframe>   
+            </p>  
+         </div>
+         <div id="boxshadow" >
+            <h1>Box-shadow</h1>
+            <p>
+            <div id="recuadro1">
+                  tipo: 
+                <select id="crbs" onload="cambBoxShadow('crbs')" onchange="cambBoxShadow('crbs')">
+                  <option selected>simple</option>
+                  <option>multiple</option>
+                  <option>interior</option>
+                  <option>transparente</option>
+                </select><br><br>
+                <div id="bs">
+                  box-shadow:<br>
+              <textarea col="40" row="4" id="bxshdw"  onchange="cambBox('bxshdw')" value="30px 10px 20px #777">30px 10px 20px #777</textarea>
+              </div>
+            </div>
+          </p>
+         </div>
+    </div>
+    <script src="funciones.js">
+  
+    </script>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>   
+    
+  </body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+ <title>HTML</title>
+ <meta charset="UTF-8">
+ <link rel="stylesheet" href="estilos.css" type="text/css">
+ <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+ <meta name="viewport" content="width=device-width , initial-scale=1.0" >
+</head>
+<body>
+    <div class="cabecera">
+    <!---<div class="titulo" id="titulo">HTML</div>-->
+    <div class="dropdown">
+    <button class="menu">HTML</button>
+    <nav class="barra">
+      <a href="index.html">General</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="javascript.html">Javascript</a>
+      <a href="react.html">React</a>
+      <a href="manjaro.html">Manjaro</a>
+    </nav>
+  </div>
+  <div class="dropdown">
+    <button class="menu">Comandos</button>
+    <nav class="barra">
+        <a href="#anclas">Anclas</a>
+        <a href="#checkbox">Checkbox</a>
+        <a href="#selec_r">Select (radio)</a>
+        <a href="#selec_i">Select (indiv)</a>
+        <a href="#selec_m">Select (mult)</a>
+        <a href="#selec_gr">Select (group)</a>
+        <a href="#fieldset">Fieldset</a>
+        <a href="#file">Input (File)</a>
+        <a href="#text">Text</a>
+        <a href="#font">Font</a>
+        <a href="#pswd_maxl">Password y<br> Maxlength</a>
+        <a href="#readonly">Readonly</a>
+        <a href="#tablas">Tablas</a>
+        <a href="#iframes">iframes</a>
+        
+    </nav>
+    </div>
+    
+</div>
+<a href="#titulo" class="subir"><img src="Images/up-arrow.png"></a>
+    <div id="titulo" class="contenido">
+        <div id="anclas">
+        <h1>Anclas (desde una misma página)</h1>
+        <p>La sintaxis para definir un ancla es:</p>
+        id=&quot;nombreancla&quot;
+        <p>Ahora la sintaxis para ir a un ancla desde un hipervínculo es la siguiente:<br>
+            &lt;a href=&quot;#nombreancla&quot;&gt; Introducción&lt;/a&gt; </p>
+        </div>
+
+        <div id="checkbox">
+        <h1>Checkbox</h1>
+        <p>
+        &lt;input type=&quot;checkbox&quot; name=&quot;html&quot; <strong>checked</strong>&gt;HTML<br><br>
+        &lt;input type=&quot;checkbox&quot; name=&quot;css&quot;&gt;CSS<br><br>
+        &lt;input type=&quot;checkbox&quot; name=&quot;javascript&quot; <strong>disabled</strong>&gt;Javascript<br><br>
+        <input type="checkbox" name="html" checked>HTML<br>
+        <input type="checkbox" name="css">CSS<br>
+        <input type="checkbox" name="css" disabled>Javascript<br>
+    </p> 
+        </div>
+        <div id="selec_r">
+            <h1>Select (radio)</h1>
+            <p>
+            &lt;input type=&quot;<strong>radio</strong>&quot; name=&quot;deporte&quot; value=&quot;1&quot; <strong>checked</strong>&gt;Fútbol&lt;br&gt;&nbsp;---><input type="radio" name="deporte" value="1" checked>Fútbol<br><br>
+            &lt;input type=&quot;<strong>radio</strong>&quot; name=&quot;deporte&quot; value=&quot;2&quot;&gt;Balonmano&lt;br&gt;&nbsp;---><input type="radio" name="deporte" value="2">Balonmano<br>
+            ...
+            </p>
+        </div>
+        <div id="selec_i">
+        <h1>Select (indiv)</h1>
+        <p>
+        &lt;select name=&quot;ciudad&quot;&gt;<br><br>
+        &lt;option value=&quot;1&quot;&gt;Cádiz&lt;/option&gt;<br><br>
+        &lt;option value=&quot;2&quot; <strong>selected</strong>&gt;Sevilla&lt;/option&gt;<br>
+        ...<br>
+        &lt;/select&gt;   
+        </p>
+            <select name="ciudad">  
+            <option value="1">Cádiz</option>
+            <option value="2" selected>Sevilla</option>
+            <option value="3">Madrid</option>
+            <option value="4">Turín</option>
+            <option value="5">Valencia</option>
+            <option value="6">Barcelona</option>
+            <option value="7">Leamington Spa</option>
+           </select>
+        </div>
+        <div id="selec_m">
+        <h1>Select (mult)</h1>
+            <p>
+            &lt;select name=&quot;ciudad2<strong>[]</strong>&quot; <strong>size=&quot;3&quot;</strong> <strong>multiple</strong>&gt;<br>
+            &lt;option value=&quot;1&quot; <strong>selected</strong>&gt;Cádiz&lt;/option&gt;<br>
+            &lt;option value=&quot;1&quot;&gt;Sevilla&lt;/option&gt;<br>
+            &lt;option value=&quot;1&quot; <strong>selected</strong>&gt;Madrid&lt;/option&gt;<br>
+            ...<br>
+            &lt;/select&gt;<br><br>
+                <select name="ciudad2[]" size="3" multiple>  
+                    <option value="1" selected>Cádiz</option>
+                    <option value="2">Sevilla</option>
+                    <option value="3" selected>Madrid</option>
+                    <option value="4">Turín</option>
+                    <option value="5">Valencia</option>
+                    <option value="6">Barcelona</option>
+                    <option value="7">Leamington Spa</option>
+                   </select>
+            </p>
+        </div>
+        <div id="selec_gr">
+            <h1>Select (group)</h1>
+            <p>
+            &lt;select name=&quot;ciudad3&quot;&gt;<br>
+            <strong>&lt;optgroup label=&quot;España&quot;&gt;</strong><br>
+            &lt;option value=&quot;1&quot;&gt;Cádiz&lt;/option&gt;<br>
+            ...<br>
+            <strong>&lt;/optgroup&gt;</strong><br>
+            <strong>&lt;optgroup label=&quot;Extranjera&quot;&gt;</strong><br>
+            &lt;option value=&quot;1&quot;&gt;Turín&lt;/option&gt;<br>
+            ...<br>
+            <strong>&lt;/optgroup&gt;</strong><br>
+            &lt;/select&gt;<br><br>
+            <select name="ciudad3">
+                <optgroup label="España"> 
+                <option value="1">Cádiz</option>
+                <option value="2">Sevilla</option>
+                <option value="3">Madrid</option>
+                <option value="5">Valencia</option>
+                <option value="6">Barcelona</option>
+                </optgroup> 
+                <optgroup label="Extranjera"></optgroup>
+                <option value="4">Turín</option>
+                <option value="7">Leamington Spa</option>
+                </select>
+                </p>
+        </div>
+        <div id="fieldset">
+        <h1>Fieldset</h1>
+        <p>
+        &lt;fieldset&gt;<br>
+        &nbsp;&lt;legend&gt;Datos:&lt;/legend&gt;<br>
+        &nbsp;&nbsp;Nombre:&lt;br&gt;<br>
+        &nbsp;&nbsp;Apellidos:&lt;br&gt;<br>
+        &lt;/fieldset&gt;<br>
+    
+        <fieldset>
+            <legend>Datos:</legend>
+            Nombre:<br>
+            Apellidos:<br>
+        </fieldset>
+        </div>
+        <div id="file">
+        <h1>Input (File)</h1>
+        <p>
+        &lt;form action=&quot;registrardatos.php&quot; method=&quot;post&quot; <strong>enctype=&quot;multipart/form-data&quot;</strong>&gt;<br>
+        &lt;input type=<strong>&quot;file&quot;</strong> name=&quot;archivo&quot;&gt;            
+        
+        <form action="registrardatos.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="archivo"><br>
+
+        </form> 
+        </div>
+        <div id="text">
+            <h1>Text</h1>
+            <p>
+            <strong>text-align:</strong> left, right, center, justify<br>
+            <strong>text-decoration:</strong> none, underline, overline, line-through<br>
+            <strong>letter-spacing:</strong> <strong>n</strong>px&nbsp;&nbsp;&nbsp;&nbsp;<strong>word-spacing:</strong> <strong>n</strong>px<br>
+            <strong>text-indent:</strong> <em>(+-)</em><strong>n</strong>px<br>
+            <strong>text-transform:</strong> none, capitalize, lowercase, uppercase<br>
+            <strong>text-shadow:</strong> <strong>n</strong>px, <strong>n</strong>px, color;<br>
+            </p>    
+        </div>
+        <div id="font">
+        <h1>Font</h1>
+        <p>
+        <strong>font:</strong> <em>(font-weight, font-style, font-variant)</em>, font-size, font-family<br><br>
+        <strong>font family:</strong> Arial, Arial Black, Courier New, Georgia, Impact, Tahoma, Times New Roman, Verdana<br>
+        <strong>font-size:</strong> <strong>n</strong>px<br>
+        <strong>font-style:</strong> normal, italic, oblique<br>
+        <strong>font-weight:</strong> normal, bold, bolder,lighter<br>
+        <strong>font-variant:</strong> small-caps, normal<br>
+        </p>
+        </div>
+        <div id="pswd_maxl">
+            <h1>Password y maxlength</h1>
+            <p>
+            &lt;input type=&quot;<strong>password</strong>&quot; name=&quot;clave&quot; size=&quot;20&quot; <strong>maxlenght=</strong>&quot;12&quot;&gt;<br><br>
+            Ingrese su nombre:
+            <input type="password" name="clave" size="20" maxlength="12">
+            </p>
+        </div>
+        <div id="readonly">
+        <h1>Readonly</h1>
+        <p>
+        &lt;<em>text/password/textarea</em> name=&quot;comentarios&quot; rows=&quot;5&quot; cols=&quot;60&quot; style=&quot;width:calc(100%)&quot; <strong>readonly</strong>&gt;<br>
+            Por la presente ..............................<br>
+            &lt;<em>/text/password/textarea</em>&gt;
+            
+        <textarea name="comentarios" rows="5" cols="60" style="width:calc(100%)" readonly >
+            Por la presente ..............................
+            </textarea>
+        </p>
+        </div>
+        <div id="tablas">
+            <h1>Tablas</h1>
+            <p>
+                &lt;table border=&quot;1&quot;&gt;<br>
+                <span style="color: darkmagenta">&lt;caption&gt;</span>Título (caption)<span style="color: darkmagenta">&lt;/caption&gt;</span><br>
+                <span style="color: red">&lt;thead&gt;</span>&lt;tr&gt;&lt;th&gt;Tema&lt;/th&gt;&lt;th&gt;Ejercicio&lt;/th&gt;&lt;/tr&gt;<span style="color: red">&lt;/thead&gt;</span><br>
+                &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Ejemplo 1&lt;/td&gt;&lt;/tr&gt;<br>
+                &lt;tr&gt;&lt;td <span style="color:olivedrab">rowspan=&quot;2&quot;</span> &gt;2&lt;/td&gt;&lt;td&gt;Ejemplo 2&lt;/td&gt;&lt;/tr&gt;<br>
+                &lt;tr&gt;&lt;td&gt;Ejemplo 3&lt;/td&gt;&lt;/tr&gt;<br>
+                &lt;tr&gt;&lt;td <span style="color:blue">colspan=&quot;2&quot;</span>&gt;Ejemplo 4&lt;/td&gt;&lt;/tr&gt;<br>
+            </p>
+            <table border="1">
+                <caption style="color: darkmagenta">Título (caption)</caption>
+                <thead style="color: red"><tr><th>Tema</th><th>Ejercicio</th></tr></thead>
+                <tr><td>1</td><td>Ejemplo 1</td></tr>
+                <tr><td rowspan="2" style="color:olivedrab">2</td><td>Ejemplo 2</td></tr>
+                <tr><td>Ejemplo 3</td></tr>
+                <tr><td colspan="2" style="color:blue">Ejemplo 4</td></tr>
+            </table>
+            
+        </div>
+        <div id="iframes">
+        <h1>iframes</h1>
+        <p>
+        &lt;<strong>iframe</strong> src=&quot;iframe.html&quot; style=&quot;width:calc(100%);height:120px&quot;&gt;<br>
+            &lt;<strong>/iframe</strong>&gt; <br>
+        <iframe src="iframe.html" style="width:calc(100%);height:120px">
+            </iframe>
+            <br>
+        Otras opciones:<br>
+        <strong>frameborder:</strong>0,1<br>
+        <strong>scroll:</strong>auto,yes,no<br>
+        <strong>name:</strong><em>para acceder al iframe desde otra página</em><br>
+        </p>
+        </div>
+        
+    </div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+</body>
+
+</html>

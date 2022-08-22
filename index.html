@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Resumen</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="estilos.css" type="text/css">
+</head>
+
+<body>
+  <div class="cabecera">
+  <!---<div class="titulo"id="titulo">General</div>-->
+  <div class="dropdown">
+    <button class="menu">General</button>
+    <nav class="barra">
+      <a href="index.html">General</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="javascript.html">Javascript</a>
+      <a href="react.html">React</a>
+      <a href="manjaro.html">Manjaro</a>
+    </nav>
+  </div>
+  <div class="dropdown">
+    <button class="menu">Comandos</button>
+    <nav class="barra">
+    <a href="#lenguajes">Lenguajes</a>
+    <a href="#validacion">Validación</a>
+    <a href="#subir_a_servidor">Subir a servidor</a>
+    </nav>
+  </div>
+</div>
+  <a href="#titulo" class="subir"><img src="Images/up-arrow.png"></a>
+  <div id="titulo" class="contenido">
+    <div id="lenguajes">
+      <h1>Lenguajes a estudiar</h1>
+      <br>
+      <ol>
+        <li>Manjaro <em>(ArchLinux)</em>
+        <ul>
+          <li>Comandos</li>
+        </ul>
+      </li>
+      <li>Front End <em>(Visualización)</em>
+        <ul>
+        <li><a href="html.html">HTML</a><em> (Maquetación)</em></li>
+        <li><a href="css.html">CSS & CSS3</a><em> (Estilo)</em></li>
+        <li><a href="javascript.html">Javascript<em></a> (Librería <a href="react.html"><strong>React</strong></a>)</em></li>
+        <li>Bootstrap 4</li>
+        </ul>
+      </li>
+      <li>Back End <em>(Lógica)</em>
+        <ul>
+          <li>PHP <em>(Framework <strong>Symfony</strong>)</em></li>
+          <li>SQL <em>(Base de datos - <strong>Doctrine</strong>)</em></li>
+        </ul>
+      </li>
+      </ol>
+    </div>
+    <div id="validacion">
+      <h1>Validación</h1>
+      <p>
+        &lt;a href=&quot;http://validator.w3.org&quot;&gt;<br>
+        &lt;img src=&quot;http://www.w3.org/Icons/valid-html401&quot;
+          alt=&quot;Valid HTML 4.01 Strict&quot; height=&quot;31&quot; width=&quot;88&quot;&gt;
+        &lt;/a&gt;
+        </p>
+        <a href="http://validator.w3.org" target="_blank"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Strict" style="height:31px;width:88px;"></a>
+    </div>
+    <div id="subir_a_servidor" class="ftp">
+      <h1>Subir HTML a servidor</h1>
+      <p>
+        <ol>
+        <li>Crear cuenta en Empresa de hosting gratuita: <a href="https://ar.000webhost.com/?__cf_chl_jschl_tk__=pmd_Ld0c3IDuiadFDGCuAB59akQEqklPVNcUPWumkpaAY6s-1633522435-0-gqNtZGzNAdCjcnBszQjl" target="_blank">000Hostweb</a></li>
+        <li>Una vez que saquemos la cuenta podemos crear un sitio web en un subdominio de esta empresa...</li>
+        <li>Debemos buscar desde la web en el panel de control del dominio creado (Configuracion del sitio web -> General) los datos para conectarnos por FTP al subdominio creado, por ejemplo debería aparecer algo similar a esto:
+        <a href="/Images/FTP_details.jpg" target="_blank"><img src="/Images/FTP_details.jpg" alt="FTP details"> </a></li>
+        <li>Descargar un programa de FTP <a href="https://filezilla-project.org/" target="_blank">FileZilla</a> y configurar datos:<br>
+        <a href="/Images/01_config_datos.jpg" target="_blank"><img src="/Images/01_config_datos.jpg" alt="configurar datos"></a><br>
+        Si los datos ingresados son correctos, es decir, son iguales a los definidos en el panel de hosting de nuestra empresa debe conectarse nuestra computadora con el servidor:<br>
+        <a href="/Images/02_hosting_conectado.jpg" target="_blank"><img src="/Images/02_hosting_conectado.jpg" alt="hosting conectado"></a></li>
+        <li>Debemos copiar los archivos que se almacenan en nuestra computadora (panel de la izquierda) a la carpeta public_html que se encuentra en el servidor que nos provee la empresa 000webhost.
+        Una vez copiado los archivos al servidor:<br>
+        <a href="/Images/03_copiar_archivos.jpg" target="_blank"><img src="/Images/03_copiar_archivos.jpg" alt="copiar archivos"></a><br>
+        podemos pedir las páginas subidas a nuestro servidor desde cualquier máquina que esté conectada a internet:<br>
+        <a href="/Images/04_pagina_abierta.jpg" target="_blank"><img src="/Images/04_pagina_abierta.jpg" alt="pagina abierta"></a></li>
+        <li>Si queremos que se cargue una página por defecto sin indicar su nombre debemos subir a nuestro servidor una página html con el nombre index (index.html)</li>
+      </ol>
+    </div>
+    
+  </div>
+  <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+</body>
+
+</html>

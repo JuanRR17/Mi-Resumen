@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+ <title>React</title>
+ <meta charset="UTF-8">
+ <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+ <link rel="stylesheet" href="estilos.css" type="text/css">
+ <meta name="viewport" content="width=device-width , initial-scale=1.0" >
+ <!--- Roboto Font -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div  class="cabecera">
+    <!---<div class="titulo"id="titulo">CSS</div>-->
+    <div class="dropdown">
+    <button class="menu">React</button>
+    <nav class="barra" style="left: 0;">
+      <a href="index.html">General</a>
+      <a href="html.html">HTML</a>
+      <a href="css.html">CSS</a>
+      <a href="javascript.html">Javascript</a>
+      <a href="react.html">React</a>
+      <a href="manjaro.html">Manjaro</a>
+    </nav>
+  </div>
+  <div class="dropdown">
+    <button class="menu">Comandos</button>
+    <nav class="barra" style="right: 0;">
+        <a href="#conceptos">Conceptos</a>
+        <a href="#componentes">Componentes</a>
+        <a href="#propiedades">Propiedades</a>
+        <a href="#refactor">Refactor</a>
+        <a href="#importar">Importar</a>
+        <a href="#proptypes">PropTypes</a>
+        <a href="#jsx">JSX</a>
+        <a href="#destructuring">Destructuring</a>
+        <a href="#hooks-useState">HOOKS - useState</a>
+        <a href="#key">Key ES6</a>
+        <a href="#vscode">VS Code</a>
+        <a href="#sintaxis">Sintaxis</a>
+        <a href="#arraymap">Array.Map ES6</a>
+        <a href="#actualizacion">Actualización React render </a>
+        <a href="#lodash">Lodash</a>
+        <a href="#templit">Template Literals ES6</a>
+        <a href="#eval">eval y linter</a>
+        <a href="#github">GitHub</a>
+        <a href="#serv_est">Server estático</a>
+        <a href="#firebase">Firebase</a>
+    </nav>
+    </div>
+    <a href="#titulo" class="subir"><img src="Images/up-arrow.png"></a>
+  </div>
+  
+    <div id="titulo" class="contenido">
+        <div id="conceptos">
+            <h1>Conceptos</h1>             
+            <p><h3>Relación entre archivos:</h3>
+                <p>1. index.html tiene un  <a href="Images/React/indexhtml.jpg" target="_blank">&lt;div id=&quot;root&quot;&gt;&lt;/div&gt;</a></p>
+                <p>2. index.jsx tiene un <a href="Images/React/indexjsx.jpg" target="_blank"> ReactDOM.render </a>(DOM es para que funcione bien en HTML) que en el segundo parámetro indica el elemento en HTML que va a modificar -> getElementbyId('root') </p>
+                <p>3. El primer parámetro del ReactDOM.render llama a la Componente App.jsx que hemos creado.</p>
+                <p>4. <a href="Images/React/Appjsx.jpg" target="_blank"> App.jsx </a> contiene la estructura de la página y llama a las Componentes. (Result.jsx en el ejemplo)</p>
+                <p>5. Creamos Componentes en archivos .jsx. (<a href="Images/React/Resultjsx.jpg" target="_blank">Result.jsx</a> en el ejem</p>
+            </p>            
+            <p>
+            Se renderiza desde el padre hacia los hijos. <br>
+            index.html -> index.jsx -> App.jsx -> Result.jsx<br>
+            Por tanto los valores se envían de padres a hijos<br>
+            </p>           
+        </div>
+        <div id="componentes">
+          <h1>Componentes</h1>
+            <p>
+            <p>1. Creamos un archivo .jsx para componente. </p>
+            <p>2. El nombre del archivo de un componente empieza siempre por mayúscula.</p>
+            <p>3. &lt;App&gt;&lt;/App&gt; es lo mismo que &lt;App /&gt;</p>
+            <p>4. Cuando importamos un archivo jsx no se pone la extension.</p>
+            Ejemplo: <em>import App from './App'</em><br>
+            <p>5. Cuando importamos un archivo css SI HAY que poner la extension</p>
+            Ejemplo: <em>import './App.css'</em>
+            </p>
+            <p>
+            En App.jsx, en el return, cuando tenemos más de una línea debemos meter todo entre paréntesis.
+            </p>            
+            <p>
+            Patrón SOLID<br>
+            S: Single Responsibility: Cada Componente tiene una única funcionalidad.
+            </p>
+            <p>
+            Los parámetros de las funciones dentro de las Componentes se dan desde el llamador(padre) del Componente.
+            </p>
+        </div>
+        <div id="propiedades">
+          <h1>Propiedades</h1>
+            <p>
+            <p>1. Las componentes se comunican mediante propiedades.</p>
+            <p>2. Las propiedades de los componentes se definen donde se usan los componentes (las propiedades de Result.jsx se definen en App.jsx).</p>
+            <p>3. El componente reciba la información desde donde se le llama (Result.jsx recibe los parámetros desde App.jsx).</p>
+            </p>
+        </div>
+        <div id="refactor">
+          <h1>Refactor de un Componente en una carpeta</h1>
+          <p>Creamos una carpeta en el que metemos el archivo jsx y el css correspondiente</p>
+          <p>Al cambiar los dos archivos a una nueva carpeta, cuando se llama al jsx en otro componente nos dará error.</p>
+          <p>Para corregirlo, renombramos el archivo jsx a index.jsx.</p>
+          <p>De esta manera, cuando en la importación del componente está escrito </p>
+          <p>import from './Button'</p>
+          <p>primero buscara un componente en la propia carpeta que se llame Button.jsx o .js </p>
+          <p>y si no lo hay, buscará una carpeta que se llame Button, y si la encuentra, buscará un archivo index.jsx y lo usará como si fuese el original Button.jsx</p>
+        </div>
+        <div id="importar">
+          <h1>Importar</h1>
+          <p><em>import React from 'react'</em> ya no es necesario incluirlo
+          </p>
+          <p>
+            <h3>Orden de importación</h3>
+          1º Import Componentes instalados<br>
+          2º Import Componentes propios<br>
+          3º Import CSS<br>
+        </p>
+        <p>
+          Para saber si un Componente instaladao se importa usando llaves o no, depende de cómo se exportó el componente en la librería que utilizamos.<br>
+          </p>
+          <p>
+          Lo que se importa por defecto no necesita llaves.<br>
+        </p>
+        <p>
+          Los componentes internos importados por separado necesitan llaves.<br>
+        </p>
+        <p>
+          Tip: La forma de saber exactamente cómo importar los componentes de una librería cualquiera es revisando su documentación en npm o en su página web.<br>
+          </p>
+        </div>
+        <div id="proptypes">
+          <h1>PropTypes</h1>
+          <p>
+            Usamos PropTypes para hacer una comprobación de que a los componentes les llegan los parámetros que queremos.
+          </p>
+          <p>
+            <h3>INSTALACIÓN</h3>
+            <p>Desde la carpeta del proyecto:</p>
+            <p>npm prop-types</p>
+          </p>
+          <p>
+            <h3>COMPROBAR INSTALACIÓN</h3>
+            <p>&quot;dependencies&quot; ->&quot;prop-types&quot;: &quot;^15.7.2&quot;</p>
+            <p>^ quiere decir que el número más a la derecha (2 en este caso) se irá actualizando automáticamente</p>
+            <p>Comprobar que la carpeta prop-types esta dentro de node_modules</p>
+          </p>
+          <p>
+            <h3>USAR PROP-TYPES</h3>
+            <p>import PropTypes from 'prop-types'</p>
+            <p>fuera del const del Componente, se escribe <span class="par">(estamos comprobando la propiedad value y que se le da un valor tipo string)</span>:</p>
+            <p>Result.propTypes (propTypes forma parte del componente) = {<br>
+              value: PropTypes <span class="par">(PropTypes es la libreria)</span> .string <span class="par">(tipo de valor que debe tener value)</span> .isRequired <span class="par">(con esto decimos que si a Result no le llega la propiedad value incurriremos en un error)</span><br>
+              }<br>
+              </p>
+              <p>
+                <p>Para dar un valor por defecto a la propiedad en caso de que no se le entregase ningun valor desde su padre:</p>
+                <p>
+                  Result.defaultProps = {<br>
+                    value: "0"<br>
+                }<br>
+                </p>
+              </p>
+          </p>
+        </div>
+        <div id="jsx">
+          <h1>JSX</h1>
+          <p>
+          En JSX para asignar una clase CSS a un elemento HTML debemos usar <strong>className</strong> en lugar de class.
+          </p>
+          <p>
+          Cuando necesitamos invocar código JS dentro de código JSX debemos poner llaves {}
+          </p>
+          <p>
+          En JSX están disponibles TODOS LOS ELEMENTOS DE HTML.
+          </p>
+        </div>
+        <div id="destructuring">
+            <h1>Object Destructuring</h1>
+            <p>
+            <p>Desde Console:</p>
+             <p>si tenemos un objeto:</p>
+            <p>
+             const person={<br>
+             id:1,<br>
+             name:Juan,<br>
+             nick:Juan1<br>
+             }
+              </p>
+              <p>
+             para saber el id necesitariamos escribir:<br>
+             console.log(person.id)
+             </p>
+             <p>
+             Pero si <strong>lo desestructuramos haciendo:<br>
+              </p>
+              <p>
+             const {id, name, nick}=person;</strong>  (No es necesario meter todas las propiedaddes, solo las que nos interesen)
+             </p>
+             <p>
+             después, para acceder a una propiedad, solo necesitamos escribir:
+             </p>
+             <p>
+             console.log(id)  
+             </p>
+             <p>
+             Aplicado a las propiedades de las Componentes:    
+             </p>
+             <p class="destructuring">
+             Esto: <a href="Images/React/destructuring_01.jpg"><img src="Images/React/destructuring_01.jpg" alt="destructuring01"> </a> 
+             es lo mismo que esto: <a href="Images/React/destructuring_02.jpg"><img src="Images/React/destructuring_02.jpg" alt="destructuring02"></a>
+             que es lo mismo que esto: <a href="Images/React/destructuring_03.jpg"><img src="Images/React/destructuring_03.jpg" alt="destructuring03"></a>
+             que es lo mismo que esto (será el que usemos): <a href="Images/React/destructuring_04.jpg"><img src="Images/React/destructuring_04.jpg" alt="destructuring04"></a>
+             </p>
+            </p>
+        </div>
+        <div id="hooks-useState">
+          <h1>HOOKS - useState</h1>
+          <p>
+            <p>
+            Se usan desde la version 16.8 de REACT
+            </p>
+            <p>
+            useState retorna:<br>
+            1 una variable (estado) y<br>
+            2 una función que permite modificar el estado.<br>
+            </p>
+            <p>
+            Se suele utilizar <strong>Array Destructuring</strong> para sus valores de retorno:<br>
+            a)<br>
+            const array = funcionQueRetornaUnArray()<br>
+            const primerElemento = array[0]<br>
+            const segundoElemento = array[1]<br>
+            </p>
+            <p>
+            b)<br>
+            const [ primerElemento, segundoElemento ] = funcionQueRetornaUnArray()<br>
+            </p>
+            <p>
+            Para importarlo:<br>
+            import {useState} from 'react'<br>
+            </p>
+              <p>
+              const arrayTextoFuncionModificaTexto = useState("")<br>
+              </p>
+              <p>
+              //arrayTextoFuncionModificaTexto => ["", funcion]<br>
+              </p>
+              <p>
+              //1er posición: valor (que inicialmente es el valor por defecto)<br>
+              const texto = arrayTextoFuncionModificaTexto[0]<br>
+              </p>
+              <p>
+              //2da posición: función que me va a permitir modificar el valor por defecto<br>
+              const funcionModificaTexto = arrayTextoFuncionModificaTexto[1]<br>
+              </p>
+              <p>
+              si hacemos funcionModificaTexto("number") y clickamos en el número 5 -><br>
+              funcionModificaTexto("5")<br>
+              -><br>
+              arrayTextoFuncionModificaTexto[0] = 5 <br>
+              o lo que es lo mismo<br>
+              texto=5<br>
+              y esto es lo que muestra Result en value={texto}<br>
+              </p>
+              <p>
+              <strong>ARRAY DESTRUCTURING</strong><br>
+              Lo anterior podemos escribir como<br>
+              const [texto, funcionModificaTexto] = useState("")<br>
+              </p>
+              <p>
+              Por convencion, a la función se le pone el nombre de la variable predecidio de set. Nos quedaría:<br>
+              const [texto, setTexto] = useState("")<br>
+              </p>
+              <p>
+              En el ejemplo de la Calc-App cambiamos texto por stack<br>
+              const [stack, setStack] = useState("")<br>
+              </p>
+          </p>
+        </div>
+        <div id="key">
+          <h1>Key ES6</h1>
+            <p>
+            Necesitamos usarlo cuando se generan listas de forma dinámica
+            </p>
+            <p>
+            Es utilizado por React para identificar qué elementos han cambiado, se agregan o se eliminan de la lista generada (RECONCILIATION)
+            </p>
+            <p>
+            Las claves pueden ser de cualquier tipo (numero, string, objeto...)
+            </p>
+            <p>
+            Las claves deben ser únicas entre los elementos hermanos.
+            </p>
+            <p>
+            Las claves deben ser estables entre renderizaciones. 
+            </p>
+            <p>
+            Claves que se determinen según la fecha o según índice NO ES BUENA PRÁCTICA.
+            </p>
+            <p>
+            Las claves deben ser un valor propio de lo que estamos renderizando.
+            </p>
+        </div>
+        <div id="vscode">
+            <h1>VS CODE</h1>
+            <p>
+            <h3>Emmet</h3>
+            Para usar Emmet:<br>
+            VSCode -> Settings -> Extensions -> Emmet -> Edit in settings.json<br>
+            </p>
+             <p>
+            añadir las lineas<br>
+            "emmet.triggerExpansionOnTab": true,<br>
+            "emmet.includeLanguages": { "javascript":"javascriptreact" }<br>
+            </p>
+            <p>
+            Si escribe solo <strong>.clase</strong>
+            </p>
+            <p>
+            y presiona TAB el resultado será
+            </p>
+            <p>
+            &lt;div className='clase'&gt;&lt;/div&gt;
+            </p>
+            <p>
+            y si escribe <strong>.numbers>button{$}*5</strong> el resultado será
+            </p>
+            <p>
+            &lt;div className=&quot;numbers&quot;&gt;<br>
+            &lt;button&gt;1&lt;/button&gt;<br>
+            &lt;button&gt;2&lt;/button&gt;<br>
+            &lt;button&gt;3&lt;/button&gt;<br>
+            &lt;button&gt;4&lt;/button&gt;<br>
+            &lt;button&gt;5&lt;/button&gt;<br>
+          </p>
+            <h3>SHORTCUTS</h3>
+            <p>
+            Para usar VARIOS CURSORES A LA VEZ
+            </p>
+            <p>
+            Alt+varios clicks
+            </p>
+            <p>
+            Ctrl+F2 para seleccionar todas las ocurrencias de la palabra
+            </p>
+            <p>
+            Ctrl+Shift+L para seleccionar todas las ocurrencias de la selección
+            </p>
+            <p>
+            en HTML5 se puede cambiar div por section
+            </p>
+          </div>
+          <div id="sintaxis">
+            <h1>Simplificar Sintaxis</h1>
+            <p>
+              1. Cuando tenemos un sólo parámetro en la función podemos eliminar los paréntesis:<br>
+            </p>
+            <p>
+              (text) => ....<br>
+              text => ....<br>
+            </p>
+            <p>
+              2. Cuando el cuerpo de la funcion tiene una sola linea podemos eliminar {}<br>
+            </p>
+            <p>
+              3. Cuando el cuerpo de la funcion solo tiene un return (sin otros elementos a su mismo nivel) y éste se encuentre al inicio de la función, podemos: eliminar la palabra return y eliminar las llaves de la función.<br>
+            </p>
+          </div>
+          <div id="arraymap">
+            <h1>Array Map ES6</h1>
+            <p>
+            El objetivo de map es tomar un array como origen, procesarlo, y obtener un array destino.
+            </p>
+            <p>          
+            El array original no es modificado
+            </p>
+            <p>          
+            Ejemplo1: Multiplicar por 2 cada uno de los elementos de un array.
+            </p>
+            <p>          
+            var array=[1,2,3,4,5]
+            </p>
+            <p>         
+            array.map(item => item*2)
+            </p>
+            <p>         
+            Ejemplo2: Añadir "hola" a cada elemento del array
+            </p>
+            <p>         
+            var array=[1,2,3,4,5]
+            </p>
+            <p>         
+            array.map(item => "hola" + item)
+            </p>
+          </div>
+          <div id="actualizacion">
+            <h1>Actualización React render</h1>
+            <p>
+              BURBUJEO es cuando un valor sube desde las capas inferiores (hijos) hasta las capas superiores (padres) hasta llegar hasta App.jsx
+            </p>
+            <p>
+              Cuando hay muchos niveles, se usa REDUX para disminuir problemas al subir capas.
+            </p>
+            <p>
+              JQUERY sirve para comunicar los eventos generados por html con JS
+            </p>
+            <p>
+              React intercede para que no haya cambios en el DOM <span class="par">(html)</span> si no hay cambios en el Estado.
+            </p>
+            <a href="Images/React/ciclo_react.jpg" target="_blank"><img src="Images/React/ciclo_react.jpg" alt="ciclo_react"></a>
+            <p>Cuando en el DOM hay algún elemento visual <span class="par">(p.e. un button)</span> que escucha un Evento <span class="par">(p.e. onClick)</span> alteramos alguna parte de nuestro Estado <span class="par">(p.e. una propiedad)</span>.</p>
+            <p>Entonces ante un nuevo Estado se genera un JSX diferente, y este es tratado por React y decide si vuelve a modificar el DOM o no.</p>
+          </div>
+          <div id="lodash">
+            <h1>Lodash</h1>
+            <p>Es una Libreria muy utilizada.</p>
+
+            <p>Instalamos la funcion words</p>
+            npm install lodash.words
+
+            <p>import words from 'lodash.words'</p>
+
+            <p>Con esto, separamos la cadena que hay en stack por los signos de operacion, creando un array en la que cada elemento son los numeros que hay entre cada operacion</p>
+            const items = words(stack, /[^-^+^*^/]+/g)
+          </div>
+          <div id="templit">
+            <h1>Template Literals ES6</h1>
+            <p>Se escribe la concatenación de string entre `  ` y escribiendo las variables dentro de ${   }</p>
+            <p>
+              var name = &quot;emiliano&quot;<br>
+              var greeting = `Hola ${name}!`<br>
+            </p>
+          </div>
+          <div id="eval">
+            <h1>eval y linter</h1>
+            <br>
+            <h3>eval</h3>
+            <p>en la calculadora, hace los calculos a partir del String</p>
+
+            <p>eval can be harmful, hay que intentar evitarla</p>
+
+             <h3>linter</h3>
+            <p>es una herramienta que analiza el código fuente para marcar errores de programación, errores, errores estilísticos y construcciones sospechosas</p>
+
+            <p><strong>eslint</strong> es la version de JavaScript de linter<br>
+            escribiendo al inicio del .jsx<br>
+            <span style="color:green">/* eslint no-eval:0*/</span><br>
+            desaparece el warning
+          </p>
+          </div>
+          <div id="github">
+            <h1>GitHub</h1><br>
+            <h3>SUBIR PROYECTO A GITHUB</h3>
+            <p>1º Hacerse cuenta en GitHub</p>
+            <p>2º Descargar Git</p>
+            <p>3º en GitHub -> crear repositorio</p>
+            <p>4º Abrir Git CMD</p>
+            <p>5º en CMD vamos a la carpeta del proyecto </p>
+            <p>6º Inicializamos el git<br>
+            git init
+            </p>
+            <p>7º Agregamos el proyecto al repositorio<br>
+            git add -A
+            </p>
+            <p>8º Comprobamos el status<br>
+            git status
+            </p>
+            <p>9º Hacemos commit para inicializar la version<br>
+            git commit -m "version 1"
+            </p>
+            <p>10º Vincular el repositorio que tenemos localmente con el repositorio que está creado en github<br>
+            git remote add origin {link desde github}</p>
+            <p>11º Enviar lo que tenemos localmente hacia el repositorio externo<br>
+            push -u origin master</p>
+            <p>12º Para agregar cambios<br>
+            git add -A<br>
+            git commit -m "version 2"<br>
+            git push origin master<br>
+             </p>
+            <h3>Links</h3>
+            <a href="https://youtu.be/zUvk3Jr2D3E" target="_blank">Subir codigo a github</a><br>
+            <a href="https://youtu.be/_tvWWCx-4T8" target="_blank">GitHUB CLI</a><br>
+          </div>
+          <div id="serv_est">
+            <h1>Server estático</h1>
+            <br>
+            <h3>Generar un server estático para pruebas:</h3>
+            <p>1º <strong>npm install -g serve</strong><br>
+            -g es para instalaciones globales, no en el node_modules local)
+            </p>
+            <p>2º <strong>npm run build</strong><br>
+            Crea archivos comprimidos del proyecto.<br>
+            Estos archivos se guardan en la carpeta build.<br>
+            </p>
+            <p>3º <strong>serve -s build</strong><br>
+            Nos abrirá un servidor local para ver cómo funciona en nuestra máquina.<br>
+            Esto se puede sustituir por Apache o NGInx, que son servidores web utilizados en ambientes de producción.<br>
+            </p>
+            <h3>Funcionamiento</h3>
+            <p>
+            <strong>Página web dinámica con PHP:</strong><br>
+            Cuando hay algun cambio desde el cliente (browser) toda la página viaja al servidor, se hacen todos los cambios y la página entera vuelve al cliente.
+            </p>
+            <p>
+            <strong>Página web estática:</strong><br>
+            Cuando trabajamos con a Single Page App (React), el index.html contiene in div id="root" que contiene el resto de la aplicación.<br> 
+            Entonces una vez que viaja el index.html solicita al server los archivos estáticos que fueron generados en el paso 2º. <br>
+            Entonces los archivos jsx y css viajan a el cliente.<br>
+            Por tanto, después de la carga inicial ya no hay más necesidad de comunicación con el server.<br>
+            </p>  
+          </div>
+          <div id="firebase">
+            <h1>Firebase</h1><br>
+            <h3>Firebase Hosting Tools</h3>
+            Nos permite hacer un deploy rápido a un servidor limitado pero que podemos hacer crecer.
+            <h3>Instalar Firebase</h3>
+            npm install -g firebase-tools
+            <h3>CLI = aplicacion de línea de comandos</h3>
+            Nos permite, por ejemplo, hacer el deployment asociado a estas Firebase tools.
+            <h3>Verificar Versión</h3>
+            firebase --version<br>
+            si fuese necesario actualizar la versión:<br>
+            npm i -g firebase-tools
+            <h3>Login</h3>
+            firebase login
+            <h3>Inicialización</h3>
+            Generamos un archivo para que Firebase pueda hacer el deployment<br>
+
+            <p>firebase init</p>
+
+            Yes <br>
+            -> <br>
+            con las flechas nos colocamos en "Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys" y con la barra espaciadora lo seleccionamos, despues hacemos Enter <br>
+            -> <br>
+            Create a new proyect<br>
+            -><br>
+            (Damos nombre al proyecto) calc-app-repeto<br>
+            -><br>
+            build<br>
+            -><br>
+            Yes<br>
+            -> <br>
+            No<br>
+
+            <p>Si lo anterior falla, ir a
+            <a href="https://console.firebase.google.com/">Firebase Console</a>
+            y crear el proyecto desde ahí. Después, volver a <br>
+            firebase init y seleccionar <br>
+            use an existing project
+          </p>
+            -><br>
+            build<br>
+            -><br>
+            Yes<br>
+            -> <br>
+            No<br>
+            -><br>
+            https://console.firebase.google.com/<br>
+            se genera un archivo firebase.json<br>
+            <h3>Compilacion->Hosting</h3>
+            Vemos el listado de proyectos con Firebase en:<br>
+            firebase projects:list
+            <p>
+            firebase use --add<br>
+            (Le damos un alias al proyecto)<br>
+            react-calculator<br>
+            </p>
+
+            <h3>Subir el proyecto a la nube Firebase:</h3>
+            firebase deploy<br>
+            haciendo click en Hosting URL accedemos a la página online de nuestro proyecto
+          </div>
+        </div>
+    </div>
+    <script src="funciones.js">
+  
+    </script>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>   
+    
+  </body>
+</html>

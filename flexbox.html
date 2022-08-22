@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Flexbox</title>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="stylesheet" href="estilos.css" type="text/css">-->
+    
+    <style>
+        html {
+        margin: 0;
+        padding: 0;
+        font-size: 17px;
+        font-family: 'Roboto', sans-serif;
+        scroll-behavior:smooth; 
+        }
+        .body{
+           margin:10px;
+           padding:10px;
+           background-color: hsl(180, 0%, 80%); 
+        }
+        .flexbox{
+            display:flex;
+            margin:5px;
+            background-color: rgba(0, 0, 0, 0.459);
+            width:700px;
+            height:500px;
+            flex-direction: var(--flex1);
+            justify-content: var(--flex2);
+            align-items: var(--flex3);
+            flex-wrap: var(--flex4);
+            align-content: var(--flex5);
+            /*flex-flow: var(--flex6);*/
+            
+        }
+        .flexbox div{
+            background-color: aqua;
+            border:1px solid white;
+            padding:5px;
+        }
+        .parametros{
+            display:flex;
+            flex-flow:row wrap;
+            width:auto;
+            
+        }
+        .parametros>div{
+            margin:5px;
+            padding:5px;
+            background-color: #bbb;
+            border-radius: 5px;
+        }        
+    </style>
+    </head>
+    <body>
+        
+        <h2>display:flex;</h2>
+        <div class="parametros">
+            <div>
+            Flex-direction:<br>
+            <select id="flex1" onchange="cambiar('flex1')" >
+                <option>row</option>
+                <option>column</option>
+                <option>column-reverse</option>
+                <option>row-reverse</option>
+            </select><br>
+            </div>
+            <div>
+            Justify-content:<br>
+            <select id="flex2" onchange="cambiar('flex2')" >
+                <option>flex-start</option>
+                <option>flex-end</option>
+                <option>center</option>
+                <option>space-between</option>
+                <option>space-around</option>
+            </select><br>
+        </div>
+        <div>
+            Aling-items:<br>
+            <select id="flex3" onchange="cambiar('flex3')" >
+                <option>stretch</option>
+                <option>flex-start</option>
+                <option>flex-end</option>
+                <option>center</option>
+                <option>baseline</option>
+            </select><br>
+        </div>
+        <div>
+            Flex-wrap:<br>
+            <select id="flex4" onchange="cambiar('flex4')" >
+                <option>nowrap</option>
+                <option>wrap</option>
+                <option>wrap-reverse</option>
+            </select><br>
+        </div>
+        <div>
+            Align-content:*<br>
+            <select id="flex5" onchange="cambiar('flex5')" >
+                <option>stretch</option>
+                <option>flex-start</option>
+                <option>flex-end</option>
+                <option>center</option>
+                <option>space-between</option>
+                <option>space-around</option>
+            </select><br>
+        </div>
+        <div>
+            Flex-flow (desactivado)**:<br>
+            <select id="flex6" onchange="cambiar('flex6')">
+                <option>row nowrap</option>
+                <option>column nowrap</option>
+                <option>row-reverse nowrap</option>
+                <option>column-reverse nowrap</option>
+                <option>row wrap</option>
+                <option>column wrap</option>
+                <option>row-reverse wrap</option>
+                <option>column-reverse wrap</option>
+                <option>row wrap-reverse</option>
+                <option>column wrap-reverse</option>
+                <option>row-reverse wrap-reverse</option>
+                <option>column-reverse wrap-reverse</option>
+            </select><br>
+        </div>  
+        <div>
+            Flex:***<br>
+        </div>   
+            
+</div>
+
+<p style="margin:5px;
+padding:5px;
+background-color: #bbb;
+border-radius: 5px;
+width:220px">
+Cantidad de bloques: <input type="text" id="cant_bloques" onchange="crearBloques()" size="1" value="3"><br>
+</p>
+<div id="flexbox" class="flexbox">
+    </div><br><p>
+    * Solo funciona con más de una línea (flex-wrap: wrap))
+    </p>
+    <p>
+    ** "valor del flex-direction"&nbsp;&nbsp;&nbsp;"valor del flex-wrap"  
+</p>    
+    <p>
+        *** flex-grow + flex-shrink + flex-basis <br>
+            entero > 1 + entero > 1 + 
+            <select>
+                <option>auto</option>
+                <option>%</option>
+                <option>rem</option>
+                <option>px</option>
+            </select>
+            </p>
+        flex: 1 2;   /* flex-basis queda con su valor por defecto */<br>
+flex: 1 20%; /* flex-shrink queda con su valor por defecto */<br>
+flex: none;  /* se almacenan los valores 0 0 auto*/<br>
+flex: auto; /* Especificamos los valores por defecto de cada propiedad */<br>
+</p>
+          </div>
+          
+        <script>
+       
+       function cambiar(type){
+           let seleccion=document.getElementById(type);
+           let patron1=/flex/;
+           let patron2=/f\d/;
+           let patron3=/ord/;
+           let patron4=/as/;
+           let texto;
+
+           if(patron1.test(type) || patron4.test(type)){
+           texto=seleccion.options[seleccion.selectedIndex].text;
+           }
+           if(patron2.test(type) || patron3.test(type)){
+            texto=seleccion.value;
+           }
+           document.documentElement.style.setProperty('--'+type,texto);
+        }
+        function crearBloques(){
+    let n=document.getElementById('cant_bloques').value;
+    let cad=' ';
+    for(i=1;i<=n;i++)
+    cad+=`<div style="flex:var(--f${i});order:var(--ord${i});align-self:(--as${i})">
+        Bloque ${i}<br>
+        flex:<br>
+        <input id="f${i}" onchange="cambiar('f${i}')" type="text" size="4" value="0 0 auto"><br>
+        order:<br><input type="text" id="ord${i}" onchange="cambiar('ord${i}')" size="1" value="0"><br>
+        align-self:<br>
+        (no funciona)<br>
+        <select id="as${i}" onchange="cambiar('as${i}')">
+            <option>auto</option>
+            <option>flex-start</option>
+            <option>flex-end</option>
+            <option>center</option>
+            <option>stretch</option>
+            <option>baseline</option>
+            </select>
+        </div>`;
+
+document.getElementById('flexbox').innerHTML=cad;
+}
+crearBloques(); 
+       
+       
+        </script>
+    </body>
+</html>
